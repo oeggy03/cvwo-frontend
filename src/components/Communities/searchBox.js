@@ -1,13 +1,15 @@
+import "./commCard.css"
 
 const SearchBox = ({ searchfield, searchChange }) => {
     return (
-        <div className='pa2'>
-        <input
-            className='pa3 ba b--green bg-lightest-blue'
-            type='search'
-            placeholder='Search for your favourite community'
-            onChange={searchChange}
-        />
+        <div className=''>
+            
+            <input
+                type='search'
+                placeholder='Search for your favourite community'
+                className="searchBar"
+                onChange={searchChange}
+            />
         </div>
     );
 }
