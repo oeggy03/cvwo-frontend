@@ -1,11 +1,29 @@
 .homepage {
     display: flex;
     justify-content: center;
+    letter-spacing: 0.09em;
 }
 
 .homeTitle {
     font-size: 80px;
     margin: 0.4em;
+    margin-top: 1.6em;
+}
+
+mark.title {
+    color: aliceblue;
+    background: none;
+    text-decoration: underline;
+    text-decoration-color: aliceblue;
+}
+
+.typed-cursor {
+    color: black
+}
+
+.homeTopics {
+    color: navy;
+    font-weight: bolder;
 }
 
 .homeIntro {
@@ -14,22 +32,31 @@
     margin: 0.4em;
 }
 .signIn {
-    margin-right: 10px;
+    margin-right: 18px;
     font-size: 25px;
     font-weight: lighter;
-    padding-top: 0.6rem;
-    padding-bottom: 0.6rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
     padding-left: 1.3rem;
     padding-right: 1.3rem;
 }
 
 .signUp {
-    margin-left: 10px;
+    margin-left: 18px;
     /* margin: 5px; */
     font-size: 25px;
     font-weight: lighter;
-    padding-top: 0.6rem;
-    padding-bottom: 0.6rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
     padding-left: 1.3rem;
     padding-right: 1.3rem;
+}
+
+.browseComm {
+    padding-top: 10px;
+    font-weight: normal;
+}
+
+.homepage h4 a {
+    color: navy;
 }
