@@ -9,7 +9,7 @@ const Homepage = () => {
 
     useEffect(() => {
         const typed = new Typed(el.current, {
-            strings: ["coding.", "animals.", "cats.", "dogs.", "NUS.", "CVWO.", "SOC."], // Strings to display
+            strings: ["coding.", "baking.", "cats.", "dogs.", "NUS.", "CVWO.", "SOC."], // Strings to display
             // Speed settings, try diffrent values untill you get good results
             startDelay: 300,
             typeSpeed: 200,
@@ -18,10 +18,11 @@ const Homepage = () => {
             loop: true
         });
 
-        // Destropying
+        // Destroying
         return () => {
             typed.destroy();
         };
+        
     }, []);
 
     return (
