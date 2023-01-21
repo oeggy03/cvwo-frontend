@@ -1,0 +1,35 @@
+.homepage {
+    display: flex;
+    justify-content: center;
+}
+
+.homeTitle {
+    font-size: 80px;
+    margin: 0.4em;
+}
+
+.homeIntro {
+    font-size: 50px ;
+    font-weight: lighter;
+    margin: 0.4em;
+}
+.signIn {
+    margin-right: 10px;
+    font-size: 25px;
+    font-weight: lighter;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+}
+
+.signUp {
+    margin-left: 10px;
+    /* margin: 5px; */
+    font-size: 25px;
+    font-weight: lighter;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+}

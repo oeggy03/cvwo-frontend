@@ -1,19 +1,31 @@
 import React from 'react';
+import './navbar.css'
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
-        <nav class="db dt-l w-100 border-box pa3 ph5-l">
-            <a class="db dtc-l v-mid mid-gray link dim w-100 w-25-l tc tl-l mb2 mb0-l" href="#" title="Home">
-                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" class="dib w2 h2 br-100" alt="CVWO"/>
-                <title class="dim dark-gray f6 f5-l dib mr3 mr4-l" href="#" title="Home">Home</title>
+        <nav className = "navbar">
+            <ul>
+            <Link to="/" className='title'>FoRoom</Link>
+            <CustomLink to = '/communities'>Browse</CustomLink>
+            <CustomLink to = '/about'>About</CustomLink>
+            <CustomLink to = '/profile'>Profile</CustomLink>
+            </ul>
+            <a href='https://github.com/oeggy03' target="_blank" rel="noreferrer noopener">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" className='github' alt="CVWO"/>
             </a>
-            <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
-                <a class="link dim dark-gray f6 f5-l dib mr3 mr4-l" href="#" title="Home">Home</a>
-                <a class="link dim dark-gray f6 f5-l dib mr3 mr4-l" href="#" title="About">About</a>
-                <a class="link dim dark-gray f6 f5-l dib mr3 mr4-l" href="#" title="Profile">Profile</a>
-            </div>
         </nav>
     )
 }
 
 export default Navbar;
+
+function CustomLink ({ to, children, ...props}) {
+    return (
+        <li className='navPath'>
+            <Link to = {to} {...props}>
+                {children}
+            </Link>
+        </li>
+    )
+}
