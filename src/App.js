@@ -5,10 +5,11 @@ import Homepage from './components/Homepage/homepage';
 import About from './components/About/about';
 import Profile from './components/Profile/profile';
 import Browse from './components/Communities/communities';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
+class App extends React.Component {
+  render () {
+    return (<div className="App">
       <Navbar />
       <div className='container'>
         <Routes>
@@ -18,8 +19,8 @@ function App() {
           <Route path = "/profile" element = {<Profile />} />
         </Routes>
       </div>
-    </div>
-  );
+    </div>)
+  };
 }
 
 export default App;
