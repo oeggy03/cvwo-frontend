@@ -1,0 +1,73 @@
+
+.commIcon {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 100%;
+    margin: 13px;
+}
+
+.commTitle {
+    font-weight: normal;
+}
+
+.commDesc h3 {
+    font-weight: normal;
+    margin-bottom: 13px;
+    padding-bottom: 10px;
+}
+
+.postCard {
+    width: 45%;
+    max-height: 500px;
+    transition: max-height 0.3s ease-out;
+    overflow: hidden;
+    box-shadow: 0px 5px 15px -4px;
+    margin: 1rem;
+}
+
+.postCard:hover {
+    transform: scale(1.01);
+    box-shadow: 0px 5px 15px 0px;
+    transition: max-height 0.3s ease-in;
+}
+    
+.postTitle {
+    text-align: left ;
+    padding-top: 40px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 20px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.postTitle h2 {
+    font-weight: bold;
+    font-size: 22px;
+    
+}
+
+.postDesc {
+    text-align: left ;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: 15px;
+}
+
+.postDesc h3 {
+    font-weight: normal;
+}
+
+.createdAt {
+    text-align: left ;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.createdAt h5 {
+    font-size: 10px;
+    font-weight: normal;
+}

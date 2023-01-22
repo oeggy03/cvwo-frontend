@@ -1,4 +1,5 @@
 import "./commCard.css";
+import { Link } from "react-router-dom";
 
 const Card = ({ title, desc, image, link }) => {
     return (
@@ -16,7 +17,7 @@ const Card = ({ title, desc, image, link }) => {
             </div>
         </div>
         <div className="btn">
-            <a class="f6 link dim ba bw1 ph3 pv2 mb2 dib navy" href={"communities/" + link}>Check this out</a>
+            <Link className="f6 link dim ba bw1 ph3 pv2 mb2 dib navy" to={link}>Check this out</Link>
         </div>
       </div>
     );

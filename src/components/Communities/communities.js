@@ -13,7 +13,10 @@ class Browse extends Component {
         }
     }
     componentDidMount() {
-      console.log("MOUNTED")
+      fetch('http://localhost:3001/api/GetCommunities')
+        .then(response=> response.json())
+        .then(comm => this.setState({comms:comm}));
+
     }
 
     onSearchChange = (event) => {
