@@ -14,13 +14,14 @@ const ShowCommunity = ({updateSI}) => {
     const [posts, setPosts] = useState([])
     const [comm, setComm] = useState({})
     const [searchfield, setSearch] = useState("")
-    const [Exist, updateExist] = useState(true)
+    const [Exist, updateExist] = useState(false)
 
     useEffect(() => {
+        updateExist(false)
         fetch('http://localhost:3001/api/GetCommunity/'+link)
         .then(response=>{ 
-            if (response.status !== 200) {
-                updateExist(false)
+            if (response.status === 200) {
+                updateExist(true)
             }
             return response.json()})
         .then(comm => {setPosts(comm.posts); setUnchanged(comm.posts); setComm(comm.community)});
