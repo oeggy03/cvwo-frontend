@@ -1,4 +1,3 @@
-import "./scrollFunc.css"
 
 const Scroll = (props) => {
     return (

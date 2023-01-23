@@ -8,6 +8,7 @@ import Browse from './components/Communities/communities';
 import ShowCommunity from './components/CommunityIndiv/showCommunity';
 import React, { useEffect, useState } from 'react';
 import CreatePost from './components/Posts/createPost';
+import ViewPost from './components/Posts/viewPost';
 
 const App = () => {
 
@@ -32,6 +33,7 @@ const App = () => {
           <Route path = "/profile" element = {<Profile updateSI = {UpdateSignedIn} statusSI = {isSignedIn}/>} />
           <Route path = "/communities/:link" element = {<ShowCommunity updateSI = {UpdateSignedIn} statusSI = {isSignedIn}/>} />
           <Route path = "/communities/:link/create" element = {<CreatePost updateSI = {UpdateSignedIn} statusSI = {isSignedIn}/>} />
+          <Route path = "/communities/:link/:id" element = {<ViewPost updateSI = {UpdateSignedIn} statusSI = {isSignedIn}/>} />
         </Routes>
       </div>
     </div>)

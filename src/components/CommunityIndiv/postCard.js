@@ -2,7 +2,6 @@ import { Link } from "react-router-dom"
 
 const PostCard = ({post}) => {
 
-    console.log(post)
     return (
     <div className="postCard">
         <div className="postTitle">
@@ -16,7 +15,7 @@ const PostCard = ({post}) => {
         </div>
         <div className="postButton">
             {!window.localStorage.getItem("isSignedIn") ? <div className="signDiscuss">Sign in to discuss!</div> :
-            <Link className="f6 link dim ba bw1 ph3 pv2 mb2 dib navy" to=''>Discuss</Link>}
+            <Link className="f6 link dim ba bw1 ph3 pv2 mb2 dib navy" to={String(post.id)}>Discuss</Link>}
         </div>
         
     </div>)
