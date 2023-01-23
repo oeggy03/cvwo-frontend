@@ -21,10 +21,12 @@ const SignIn = ({toggle, updater}) => {
         fetch('http://localhost:3001/api/SignIn', fetchOptions)
         .then(response => {
             if (response.status === 200) {updater(true)} 
+
             return response.json()})
         .then(res => {
             updateMessage(res.message); 
             console.log(res.user);
+            window.localStorage.setItem("currentUser", res.user)
         });
         
     }

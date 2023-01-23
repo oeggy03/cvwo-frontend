@@ -6,15 +6,20 @@ import About from './components/About/about';
 import Profile from './components/Profile/profile';
 import Browse from './components/Communities/communities';
 import ShowCommunity from './components/CommunityIndiv/showCommunity';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const App = () => {
 
-    const [isSignedIn, setSignedIn] = useState(false);
+    const [isSignedIn, setSignedIn] = useState(window.localStorage.getItem("isSignedIn"));
 
     function UpdateSignedIn (status) {
+      window.localStorage.setItem("isSignedIn", status)
       setSignedIn(status)
     }
+
+    useEffect(() => {
+      setSignedIn(window.localStorage.getItem("isSignedIn"))
+    }, [])
     
     return (<div className="App">
       <Navbar updateSI = {UpdateSignedIn} statusSI = {isSignedIn}/>

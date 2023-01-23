@@ -37,7 +37,7 @@ body {
     gap: 1rem;
 }
 
-.navbar a:hover {
+.navbar a:hover, .navbar .navPath:hover {
     color: #6c757d;
     cursor: pointer;
 }
@@ -49,4 +49,8 @@ body {
 .github:hover {
     cursor: pointer;
     opacity: 0.7;
+}
+
+.navRight {
+    align-items: center;
 }

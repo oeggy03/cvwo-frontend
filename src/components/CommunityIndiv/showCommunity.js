@@ -20,7 +20,7 @@ const ShowCommunity = ({updateSI}) => {
         .then(response=> response.json())
         .then(comm => {setPosts(comm.posts); setUnchanged(comm.posts); setComm(comm.community)});
 
-    }, [])
+    }, [link])
 
     const onSearchChange = (event) => {
         setSearch(event.target.value)
