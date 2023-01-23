@@ -1,0 +1,59 @@
+.titleBar {
+    width: 1000px;
+    border: none;
+    padding-left: 13px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 13px;
+    background-color: #ddd;
+    resize: none;
+    height: 60px;
+}
+
+.createWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.createIntro {
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.createTitleSection {
+    width: 1000px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+.createTitle {
+    font-weight: normal;
+    font-size: 17px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.createBody {
+    width: 1000px;
+    border: none;
+    padding-left: 13px;
+    padding-right: 13px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: #ddd;
+    resize: none;
+    min-height: 300px;
+    height: fit-content;
+}
+
+.createSubmitButton {
+    width: 300px;
+}
+
+.createSubmitButton:hover {
+    cursor: pointer;
+}

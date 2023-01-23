@@ -14,10 +14,15 @@ const ShowCommunity = ({updateSI}) => {
     const [posts, setPosts] = useState([])
     const [comm, setComm] = useState({})
     const [searchfield, setSearch] = useState("")
+    const [Exist, updateExist] = useState(true)
 
     useEffect(() => {
         fetch('http://localhost:3001/api/GetCommunity/'+link)
-        .then(response=> response.json())
+        .then(response=>{ 
+            if (response.status !== 200) {
+                updateExist(false)
+            }
+            return response.json()})
         .then(comm => {setPosts(comm.posts); setUnchanged(comm.posts); setComm(comm.community)});
 
     }, [link])
@@ -38,12 +43,12 @@ const ShowCommunity = ({updateSI}) => {
     }
         
     return(<div>
-        <Scroll>
+        {Exist ? <Scroll>
             <CommHeader comm = {comm}/>
             <CommSearchbar searchChange={onSearchChange}/>
             {/* <SortPosts /> */}
             <PostCards posts = {posts}/>
-        </Scroll>
+        </Scroll> : <div>This community doesn't exist.</div>}
     </div>)
 }
 

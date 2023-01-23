@@ -26,7 +26,9 @@ const SignIn = ({toggle, updater}) => {
         .then(res => {
             updateMessage(res.message); 
             console.log(res.user);
-            window.localStorage.setItem("currentUser", res.user)
+            window.localStorage.setItem("userid", res.user.id)
+            window.localStorage.setItem("username", res.user.username)
+            window.localStorage.setItem("email", res.user.email)
         });
         
     }
