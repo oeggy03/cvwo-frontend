@@ -7,7 +7,7 @@ import CommSearchbar from "./commSearchBar";
 import PostCards from "./postCards";
 import "./showCommunity.css"
 
-const ShowCommunity = () => {
+const ShowCommunity = ({updateSI}) => {
     //gets the community link
     const {link} = useParams()
     const [unchangedposts, setUnchanged] = useState([])
@@ -24,8 +24,6 @@ const ShowCommunity = () => {
 
     const onSearchChange = (event) => {
         setSearch(event.target.value)
-        console.log(event.target.value)
-        console.log(unchangedposts)
         if (event.target.value === "") {
             setPosts(unchangedposts)
         }
@@ -43,6 +41,7 @@ const ShowCommunity = () => {
         <Scroll>
             <CommHeader comm = {comm}/>
             <CommSearchbar searchChange={onSearchChange}/>
+            {/* <SortPosts /> */}
             <PostCards posts = {posts}/>
         </Scroll>
     </div>)

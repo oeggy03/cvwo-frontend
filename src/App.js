@@ -6,23 +6,29 @@ import About from './components/About/about';
 import Profile from './components/Profile/profile';
 import Browse from './components/Communities/communities';
 import ShowCommunity from './components/CommunityIndiv/showCommunity';
-import React from 'react';
+import React, { useState } from 'react';
 
-class App extends React.Component {
-  render () {
+const App = () => {
+
+    const [isSignedIn, setSignedIn] = useState(false);
+
+    function UpdateSignedIn (status) {
+      setSignedIn(status)
+    }
+    
     return (<div className="App">
       <Navbar />
       <div className='container'>
         <Routes>
-          <Route path = "/" element = {<Homepage />} />
+          <Route path = "/" element = {<Homepage updateSI = {UpdateSignedIn}/>} />
           <Route path = "/communities" element = {<Browse />} />
-          <Route path = "/about" element = {<About />} />
-          <Route path = "/profile" element = {<Profile />} />
-          <Route path = "/communities/:link" element = {<ShowCommunity/>} />
+          <Route path = "/about" element = {<About updateSI = {UpdateSignedIn}/>} />
+          <Route path = "/profile" element = {<Profile updateSI = {UpdateSignedIn}/>} />
+          <Route path = "/communities/:link" element = {<ShowCommunity updateSI = {UpdateSignedIn}/>} />
         </Routes>
       </div>
     </div>)
   };
-}
+
 
 export default App;

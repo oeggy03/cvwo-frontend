@@ -8,6 +8,7 @@ body {
 
 .navbar {
     background-color: #f8f9fa;
+    height: 10vh;
     color: rgba(0,0,0,.9);
     font-size: 17px;
     position: relative;

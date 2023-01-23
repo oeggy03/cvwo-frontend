@@ -17,8 +17,12 @@
     padding-bottom: 10px;
 }
 
+.cardList {
+    display: flex;
+    flex-wrap: wrap;
+}
 .postCard {
-    width: 45%;
+    width: 800px;
     max-height: 500px;
     transition: max-height 0.3s ease-out;
     overflow: hidden;
@@ -70,4 +74,15 @@
 .createdAt h5 {
     font-size: 10px;
     font-weight: normal;
+}
+
+.searchAndCreate {
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+}
+
+.createPostBut {
+    margin-left: 10px;
+    height: 110%;
 }

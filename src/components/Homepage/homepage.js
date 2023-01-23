@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Typed from 'typed.js';
 import { useEffect, useRef } from 'react';
 
-const Homepage = () => {
+const Homepage = ({updateSI}) => {
     const el = useRef(null);
 
     useEffect(() => {
