@@ -2,7 +2,7 @@ const CommHeader = ({comm}) => {
     return (
     <div>
         <div className="commHeader">
-            <img className = "commIcon" src={comm.image}/>
+            <img className = "commIcon" src={comm.image} alt="Icon"/>
             <h1 className="commTitle">The {comm.name} community</h1>
             <div className="commDesc">
                 <h3>{comm.desc}</h3>

@@ -17,14 +17,14 @@ const App = () => {
     }
     
     return (<div className="App">
-      <Navbar />
+      <Navbar updateSI = {UpdateSignedIn} statusSI = {isSignedIn}/>
       <div className='container'>
         <Routes>
-          <Route path = "/" element = {<Homepage updateSI = {UpdateSignedIn}/>} />
+          <Route path = "/" element = {<Homepage updateSI = {UpdateSignedIn} statusSI = {isSignedIn}/>} />
           <Route path = "/communities" element = {<Browse />} />
-          <Route path = "/about" element = {<About updateSI = {UpdateSignedIn}/>} />
-          <Route path = "/profile" element = {<Profile updateSI = {UpdateSignedIn}/>} />
-          <Route path = "/communities/:link" element = {<ShowCommunity updateSI = {UpdateSignedIn}/>} />
+          <Route path = "/about" element = {<About updateSI = {UpdateSignedIn} statusSI = {isSignedIn}/>} />
+          <Route path = "/profile" element = {<Profile updateSI = {UpdateSignedIn} statusSI = {isSignedIn}/>} />
+          <Route path = "/communities/:link" element = {<ShowCommunity updateSI = {UpdateSignedIn} statusSI = {isSignedIn}/>} />
         </Routes>
       </div>
     </div>)
