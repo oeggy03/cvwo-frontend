@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import "./posts.css"
 
 const CreatePost = () => {
@@ -13,6 +13,9 @@ const CreatePost = () => {
     const [title, setTitle] = useState("")
     const [desc, setDesc] = useState("")
     const [content, setContent] = useState("")
+
+    //server responds with the post id
+    const [postID, setPostID] = useState(0)
 
     useEffect(() => {
         setSuccess(false)
@@ -50,14 +53,16 @@ const CreatePost = () => {
             if (response.status === 200) {setSuccess(true)} 
 
             return response.json()})
-        .then(res => {
-            console.log(res)
-        });
+        .then(id => setPostID(id));
     }
     return (
     <div className="createPostScroll">
         {!Exist ? <div>Hmmm... this community doesn't seem to exist</div> :
-        (success ? <div>Post created Successfully</div>:
+        (success ? 
+                <div>
+                    <div className="plainText">Post created successfully!</div>
+                    <Link class="f6 link dim ph3 pv2 mb2 dib white bg-navy viewCreatedPostButton" to={"/communities/"+ link + "/" + postID}>View my post</Link>
+                </div>:
                 <div className="createWrapper">
                     <div className="createIntro">Create a post for the {comm.name} community!</div>
                     <div className="createTitleSection">

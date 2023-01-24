@@ -2,12 +2,16 @@
     white-space: pre-wrap;
 }
 
+.plainText {
+    margin-top: 30px;
+}
+
 .viewPostWindow {
     flex-grow: 1;
+    width: 100%;
 }
 
 .viewPostWindowSuccess {
-    flex-grow: 1;
     width: 100%;
     display: flex;
     align-items: center;
@@ -18,6 +22,11 @@
     flex-grow: 1;
     height: 100%;
 }
+
+.viewCreatedPostButton {
+    margin-top: 20px;
+}
+
 .titleBar {
     width: 1000px;
     border: none;
@@ -160,4 +169,8 @@
 
 .ownerButton {
     width: 150px;
+}
+
+.ownerButton:hover {
+    cursor: pointer;
 }
