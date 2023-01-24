@@ -43,9 +43,10 @@ const App = () => {
       setSignedIn(window.localStorage.getItem("isSignedIn"))
     }, [])
     
-    return (<div className="App">
+    return (
+    <div className="App">
       <Navbar updateSI = {UpdateSignedIn} statusSI = {isSignedIn}/>
-      <div className='container'>
+      <div className='Appcontainer'>
         <Routes>
           <Route path = "/" element = {<Homepage updateSI = {UpdateSignedIn} statusSI = {isSignedIn}/>} />
           <Route path = "/communities" element = {<Browse/>} />

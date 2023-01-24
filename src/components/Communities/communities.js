@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Scroll from "../scrollFunc";
 import SearchBox from "./searchBox";
 import CardList from "./commListCards";
 import './commCard.css'
@@ -25,12 +24,10 @@ const Browse = ({statusSI}) => {
     }
 
     return (
-        <div>
-          <Scroll>
+        <div className="allCommunityMain">
             <h1 className='commListpageTitle'>Our Communities</h1>
             <SearchBox searchChange={(event) => onSearchChange(event)}/>
             <CardList comms={filteredComms} />
-          </Scroll>
         </div>
       );
 }

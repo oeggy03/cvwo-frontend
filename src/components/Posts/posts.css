@@ -1,3 +1,23 @@
+.postContentView {
+    white-space: pre-wrap;
+}
+
+.viewPostWindow {
+    flex-grow: 1;
+}
+
+.viewPostWindowSuccess {
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+}
+
+.createPostScroll {
+    flex-grow: 1;
+    height: 100%;
+}
 .titleBar {
     width: 1000px;
     border: none;
@@ -56,4 +76,88 @@
 
 .createSubmitButton:hover {
     cursor: pointer;
+}
+
+.postContentWrapper{
+    margin-top: 2%;
+    box-shadow: 5px 5px 15px -4px;
+    width: 85%;
+}
+
+.postContentView {
+    line-height: 150%;
+    opacity: 90%;
+    padding:2%;
+    text-align: left;
+    border: 0.2px solid rgba(0, 0, 0, .5);
+}
+
+.postDescView {
+    white-space: pre-wrap;
+    line-height: 150%;
+    opacity: 90%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+    text-align: left;
+    border: 0.2px solid rgba(0, 0, 0, .5);
+}
+
+.postDescViewIntro {
+    text-align: left;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.postViewDescSec {
+    margin-left: 5%;
+    margin-right: 5%;
+    overflow: hidden;
+}
+
+.postContViewIntro {
+    text-align: left;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 15px;
+}
+.postViewContSec {
+    margin-top: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 40px;
+}
+
+.postViewTitle {
+    font-weight: 600;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.postViewIntroSec {
+    margin-top: 60px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 60px;
+}
+
+.postViewCreator {
+    font-weight: 500;
+}
+
+.postViewCreatorLight {
+    font-weight: 400;
+}
+
+.postViewOptionsOwner {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.ownerButton {
+    width: 150px;
 }

@@ -1,14 +1,25 @@
+.allCommunityMain {
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+}
 .cardList {
     margin-top: 20px;
     margin-left: 20px;
     margin-right: 20px;
+    width: 70%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
+.searchBarDiv {
+    width: 70%;
+}
 .searchBar {
-    width: 40%;
+    width: 70%;
     height: 2rem;
     border: none;
     padding-left: 13px;

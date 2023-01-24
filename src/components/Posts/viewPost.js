@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import ViewPostContent from "./viewPostContent"
 
 const ViewPost = () => {
     const {link, id} = useParams()
@@ -8,10 +9,17 @@ const ViewPost = () => {
     const [comm, setComm] = useState(link)
     const [creator, setCreator] = useState("")
     const [success, setSuccess] = useState(false)
+    const [ownership, setOwnership] = useState(false)
+
     useEffect(() => {
         setSuccess(false)
-        fetch("http://localhost:3001/api/RetrievePost/"+String(id))
+        const fetchOptions = {
+            method: 'GET',
+            credentials: 'include'
+        }
+        fetch("http://localhost:3001/api/RetrievePost/"+String(id), fetchOptions)
         .then(response => {
+            console.log(response.status)
             if (response.status === 200){
                 setSuccess(true)
             }
@@ -22,15 +30,19 @@ const ViewPost = () => {
                 setPost(res.post)
                 setComm(res.community)
                 setCreator(res.user)
+                setOwnership(res.owner)
             }
+
         )
     }, [])
     return (
-        <div>
-            <h2>Post Title: {post.title}</h2>
-            <h4>Created by {creator}</h4>
-            <h5>Description: {post.desc}</h5>
-            <div>{post.content}</div>
+        <div className="viewPostWindow">
+            {success ? 
+            <div className="viewPostWindowSuccess">
+                <ViewPostContent ownership={ownership} comm={comm} creator={creator} post={post} />
+                {/* <ViewPostComments /> */}
+                
+            </div> : <div>Sorry, post not found.</div>}
         </div>)
 }
 

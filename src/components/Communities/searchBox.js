@@ -2,7 +2,7 @@ import "./commCard.css"
 
 const SearchBox = ({ searchfield, searchChange }) => {
     return (
-        <div className=''>
+        <div className='searchBarDiv'>
             
             <input
                 type='search'

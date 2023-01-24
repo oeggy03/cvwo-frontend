@@ -1,7 +1,6 @@
 
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Scroll from "../scrollFunc";
 import CommHeader from "./commHeader";
 import CommSearchbar from "./commSearchBar";
 import PostCards from "./postCards";
@@ -42,13 +41,15 @@ const ShowCommunity = ({statusSI}) => {
         }
     }
         
-    return(<div>
-        {Exist ? <Scroll>
+    return(
+    <div className="showCommunityMain">
+        {Exist ? 
+        <div className="showCommunityMainExist">
             <CommHeader comm = {comm}/>
-            <CommSearchbar searchChange={onSearchChange}/>
+            <CommSearchbar statusSI = {statusSI} searchChange={onSearchChange}/>
             {/* <SortPosts /> */}
             <PostCards posts = {posts} statusSI = {statusSI}/>
-        </Scroll> : <div>This community doesn't exist.</div>}
+        </div> : <div>This community doesn't exist.</div>}
     </div>)
 }
 
