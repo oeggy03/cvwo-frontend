@@ -7,7 +7,8 @@ import CommSearchbar from "./commSearchBar";
 import PostCards from "./postCards";
 import "./showCommunity.css"
 
-const ShowCommunity = ({updateSI}) => {
+const ShowCommunity = ({statusSI}) => {
+    console.log("status", statusSI)
     //gets the community link
     const {link} = useParams()
     const [unchangedposts, setUnchanged] = useState([])
@@ -34,12 +35,10 @@ const ShowCommunity = ({updateSI}) => {
             setPosts(unchangedposts)
         }
         else {
-            console.log("hello")
             setPosts(unchangedposts.filter(post =>{
                 return (post.title.toLowerCase().includes(searchfield.toLowerCase())
                         || post.desc.toLowerCase().includes(searchfield.toLowerCase()))
             }))
-            console.log(posts)
         }
     }
         
@@ -48,7 +47,7 @@ const ShowCommunity = ({updateSI}) => {
             <CommHeader comm = {comm}/>
             <CommSearchbar searchChange={onSearchChange}/>
             {/* <SortPosts /> */}
-            <PostCards posts = {posts}/>
+            <PostCards posts = {posts} statusSI = {statusSI}/>
         </Scroll> : <div>This community doesn't exist.</div>}
     </div>)
 }

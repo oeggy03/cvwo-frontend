@@ -3,8 +3,12 @@ import "./auth.css"
 
 const SignUp = ({toggle}) => {
     const [signUpMessage, updateMessage] = useState("");
+    const [username, updateUsername] = useState("")
+    const [email, updateEmail] = useState("")
+    const [password, updatePassword] = useState("")
 
-    function fetchSignUp (username, email, password) {
+    //activates when sign up button is pressed
+    function fetchSignUp () {
         const data = {
             username:username,
             email:email,
@@ -35,24 +39,25 @@ const SignUp = ({toggle}) => {
                         <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
                             <legend className="f4 fw6 ph0 mh0">Sign Up</legend>
                             <div className="mt3">
-                                <label className="db fw4 lh-copy f6" for="email-address">Email address</label>
-                                <input className="pa2 input-reset ba bg-transparent w-100 measure" type="email" name="email-address"  id="email-address"/>
+                                <label className="db fw4 lh-copy f6">Email address</label>
+                                <input className="pa2 input-reset ba bg-transparent w-100 measure" type="email" name="email-address"  id="email-address"
+                                        onChange={input => updateEmail(input.target.value)}/>
                             </div>
                             <div className="mt3">
-                                <label className="db fw4 lh-copy f6" for="username">Username</label>
-                                <input className="pa2 input-reset ba bg-transparent w-100 measure" type="username" name="username"  id="username"/>
+                                <label className="db fw4 lh-copy f6">Username</label>
+                                <input className="pa2 input-reset ba bg-transparent w-100 measure" type="username" name="username"  id="username"
+                                        onChange={input => updateUsername(input.target.value)}/>
                             </div>
                             <div className="mt3">
-                                <label className="db fw4 lh-copy f6" for="password">Password</label>
-                                <input className="b pa2 input-reset ba bg-transparent" type="password" name="password"  id="password"/>
+                                <label className="db fw4 lh-copy f6">Password</label>
+                                <input className="b pa2 input-reset ba bg-transparent" type="password" name="password"  id="password"
+                                        onChange={input => updatePassword(input.target.value)}/>
                             </div>
                             
                         </fieldset>
                         <div className="messageSU">{signUpMessage}</div>
                         <div className="mt3">
-                            <div className="f6 link dim ba bw1 ph3 pv2 mb2 dib navy signupSubmit" onClick={() => fetchSignUp(document.getElementById('username').value,
-                                                                                                                        document.getElementById('email-address').value,
-                                                                                                                        document.getElementById('password').value)}>Sign Up</div>
+                            <div className="f6 link dim ba bw1 ph3 pv2 mb2 dib navy signupSubmit" onClick={fetchSignUp}>Sign Up</div>
                         </div>
                     </form>
                     </article>

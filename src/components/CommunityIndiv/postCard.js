@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 
-const PostCard = ({post}) => {
-
+const PostCard = ({statusSI, post}) => {
+    console.log(statusSI)
     return (
     <div className="postCard">
         <div className="postTitle">
@@ -14,7 +14,7 @@ const PostCard = ({post}) => {
             <h5>Post was created on {post.postdate.slice(0, 10)}</h5>
         </div>
         <div className="postButton">
-            {!window.localStorage.getItem("isSignedIn") ? <div className="signDiscuss">Sign in to discuss!</div> :
+            {!statusSI ? <div className="signDiscuss">Sign in to discuss!</div> :
             <Link className="f6 link dim ba bw1 ph3 pv2 mb2 dib navy" to={String(post.id)}>Discuss</Link>}
         </div>
         

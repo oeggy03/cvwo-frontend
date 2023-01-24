@@ -1,7 +1,7 @@
 import Card from "./commCard";
 import "./commCard.css"
 
-const CardList = ({ comms }) => {
+const CardList = ({ statusSI, comms }) => {
     return (
       <div className="cardList">
         {

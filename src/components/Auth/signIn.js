@@ -3,6 +3,8 @@ import "./auth.css"
 
 const SignIn = ({toggle, updater}) => {
     const [signInMessage, updateMessage] = useState("")
+    const [username, updateUsername] = useState("")
+    const [password, updatePassword] = useState("")
 
     function fetchSignIn (username, password) {
         const data = {
@@ -16,7 +18,8 @@ const SignIn = ({toggle, updater}) => {
                 'Content-Type': 'application/json'
                 // 'Content-Type': 'application/x-www-form-urlencoded',
             },
-            body: (JSON.stringify(data)) // body data type must match "Content-Type" header
+            body: (JSON.stringify(data)), // body data type must match "Content-Type" header
+            credentials: 'include'
         }
         fetch('http://localhost:3001/api/SignIn', fetchOptions)
         .then(response => {
@@ -42,19 +45,20 @@ const SignIn = ({toggle, updater}) => {
                         <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
                             <legend className="f4 fw6 ph0 mh0">Sign In</legend>
                             <div className="mt3">
-                                <label className="db fw4 lh-copy f6" for="username">Username</label>
-                                <input className="pa2 input-reset ba bg-transparent w-100" type="username" name="username"  id="username"/>
+                                <label className="db fw6 lh-copy f6">Username</label>
+                                <input className="pa2 input-reset ba bg-transparent w-100" type="username" name="username"  id="username"
+                                        onChange={input => updateUsername(input.target.value)}/>
                             </div>
                             <div className="mv3">
-                                <label className="db fw6 lh-copy f6" for="password">Password</label>
-                                <input className="b pa2 input-reset ba bg-transparent w-100" type="password" name="password"  id="password"/>
+                                <label className="db fw6 lh-copy f6">Password</label>
+                                <input className="b pa2 input-reset ba bg-transparent w-100" type="password" name="password"  id="password"
+                                        onChange={input => updatePassword(input.target.value)}/>
                             </div>
                             {/* <label className="pa0 ma0 lh-copy f6 pointer"><input type="checkbox"/> Remember me</label> */}
                         </fieldset>
                         <div className="messageSI">{signInMessage}</div>
                         <div className="">
-                            <div className="f6 link dim ba bw1 ph3 pv2 mb2 dib navy signupSubmit" onClick={() => fetchSignIn(document.getElementById('username').value,
-                                                                                                                        document.getElementById('password').value)}>Sign In</div>
+                            <div className="f6 link dim ba bw1 ph3 pv2 mb2 dib navy signupSubmit" onClick={() => fetchSignIn(username, password)}>Sign In</div>
                         </div>
                         <div className="lh-copy mt3">
                             {/* <a href="#0" className="f6 link dim black db">Sign up</a> */}

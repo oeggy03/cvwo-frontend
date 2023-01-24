@@ -12,10 +12,30 @@ import ViewPost from './components/Posts/viewPost';
 
 const App = () => {
 
-    const [isSignedIn, setSignedIn] = useState(window.localStorage.getItem("isSignedIn"));
+    const [isSignedIn, setSignedIn] = useState(false);
+    const [username, setUsername] = useState("")
+    const [email, setEmail] = useState("")
+    const [userid, setID] = useState("")
+
+    useEffect(() => {
+        const fetchOptions = {
+            method: 'GET', // *GET, POST, PUT, DELETE, etc.
+            credentials: 'include'
+        }
+
+        fetch('http://localhost:3001/api/GetUser', fetchOptions)
+        .then(response => {
+            if (response.status === 200) {setSignedIn(true)} 
+
+            return response.json()})
+        .then(res => {
+            setUsername(res.username)
+            setID(res.id)
+            setEmail(res.email)
+        });
+    })
 
     function UpdateSignedIn (status) {
-      window.localStorage.setItem("isSignedIn", status)
       setSignedIn(status)
     }
 
@@ -28,12 +48,12 @@ const App = () => {
       <div className='container'>
         <Routes>
           <Route path = "/" element = {<Homepage updateSI = {UpdateSignedIn} statusSI = {isSignedIn}/>} />
-          <Route path = "/communities" element = {<Browse />} />
-          <Route path = "/about" element = {<About updateSI = {UpdateSignedIn} statusSI = {isSignedIn}/>} />
-          <Route path = "/profile" element = {<Profile updateSI = {UpdateSignedIn} statusSI = {isSignedIn}/>} />
-          <Route path = "/communities/:link" element = {<ShowCommunity updateSI = {UpdateSignedIn} statusSI = {isSignedIn}/>} />
-          <Route path = "/communities/:link/create" element = {<CreatePost updateSI = {UpdateSignedIn} statusSI = {isSignedIn}/>} />
-          <Route path = "/communities/:link/:id" element = {<ViewPost updateSI = {UpdateSignedIn} statusSI = {isSignedIn}/>} />
+          <Route path = "/communities" element = {<Browse/>} />
+          <Route path = "/about" element = {<About statusSI = {isSignedIn}/>} />
+          <Route path = "/profile" element = {<Profile username={username} email={email} id={userid} updateSI = {UpdateSignedIn} statusSI = {isSignedIn}/>} />
+          <Route path = "/communities/:link" element = {<ShowCommunity statusSI = {isSignedIn}/>} />
+          <Route path = "/communities/:link/create" element = {<CreatePost statusSI = {isSignedIn}/>} />
+          <Route path = "/communities/:link/:id" element = {<ViewPost statusSI = {isSignedIn}/>} />
         </Routes>
       </div>
     </div>)

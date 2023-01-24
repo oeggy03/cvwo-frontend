@@ -8,6 +8,23 @@ const Navbar = ({updateSI, statusSI}) => {
     const [showSignIn, setShowSI] = useState(false)
     const [showSignUp, setShowSU] = useState(false)
 
+    function SignOut() {
+        const fetchOptions = {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+              },
+            credentials: 'include'
+        }
+
+        fetch('http://localhost:3001/api/LogOut', fetchOptions)
+        .then(response => {
+            if(response.status === 200) {updateSI(false)}
+            return response.json()})
+        .then(res => console.log(res.message));
+    }
+    
     function activateSignIn () {
         setShowSI(true)
     }
@@ -40,7 +57,7 @@ const Navbar = ({updateSI, statusSI}) => {
                 {statusSI ? null : <div className='navPath' onClick={activateSignIn}>Sign In</div>}
                 {statusSI ? null : <div className='navPath' onClick={activateSignUp}>Sign Up</div>}
                 {statusSI? <CustomLink to = '/profile'>Profile</CustomLink> : null}
-                {statusSI? <div className='navPath' onClick={()=>{window.localStorage.removeItem("isSignedIn"); window.location.reload(false)}}>Sign Out</div> : null}
+                {statusSI? <div className='navPath' onClick={()=>SignOut()}>Sign Out</div> : null}
             </ul>
             {showSignIn?<SignIn toggle={deactivateSignIn} updater={updateSI}/>:null}
             {showSignUp?<SignUp toggle={deactivateSignUp}/>:null}
