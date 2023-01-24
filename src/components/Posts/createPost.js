@@ -35,7 +35,6 @@ const CreatePost = () => {
             title:title,
             desc:desc,
             content:content,
-            userid:window.localStorage.getItem("userid"),
             communityid:comm.id
         }
 

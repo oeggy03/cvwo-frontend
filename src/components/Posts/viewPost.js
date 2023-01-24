@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
+import ViewPostComments from "./viewPostComments"
 import ViewPostContent from "./viewPostContent"
 
 const ViewPost = () => {
@@ -56,9 +57,13 @@ const ViewPost = () => {
             {!success ? <div className="plainText">Sorry, post not found.</div> :
             (!deleted ? <div className="viewPostWindowSuccess">
                 <ViewPostContent ownership={ownership} comm={comm} creator={creator} post={post} fetchDelete={fetchDelete}/>
-                {/* <ViewPostComments /> */}
+                <ViewPostComments postid={id}/>
                 
-            </div> : <div className="plainText">Post deleted successfully.</div>)}
+            </div> : 
+            <div className="postViewDeleteConfirm">
+                <div className="plainText">Post deleted successfully.</div>
+                <Link class="f6 link dim ph3 pv2 mb2 dib white bg-navy postViewDeleteConfirmBut" to={"/communities/"+link}>Back to community</Link>
+            </div>)}
         </div>)
 }
 

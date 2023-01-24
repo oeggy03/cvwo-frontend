@@ -5,7 +5,7 @@ const ViewPostContent = ({ownership, comm, creator, post, fetchDelete}) => {
     <div className="postContentWrapper">
         <div className="postViewIntroSec">
             <h2 className="postViewTitle">{post.title}</h2>
-            <div className="postViewCreator"> <lessbold className="postViewCreatorLight">Created by:</lessbold> {creator} <lessbold className="postViewCreatorLight">for the {comm} community</lessbold></div>
+            <div className="postViewCreator"> <text className="postViewCreatorLight">Created by:</text> {creator} <text className="postViewCreatorLight">for the {comm} community</text></div>
         </div>
         <div className="postViewDescSec">
             <div className="postDescViewIntro">Post Description</div>
