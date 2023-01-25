@@ -14,3 +14,8 @@ Installs the necessary dependencies
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+## Notable features:
+
+1. Creation of accounts, authentication with jwt tokens.
+2. Creation of communities.
+3. Creation, Updating, and deleting of Posts and Comments.
