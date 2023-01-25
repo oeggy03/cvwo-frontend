@@ -32,8 +32,8 @@ const CreatePost = () => {
     function fetchCreate () {
         const data = 
         {
-            title:title,
-            desc:desc,
+            title:title.substring(0,100),
+            desc:desc.substring(0,200),
             content:content,
             communityid:comm.id
         }

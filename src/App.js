@@ -9,6 +9,7 @@ import ShowCommunity from './components/CommunityIndiv/showCommunity';
 import React, { useEffect, useState } from 'react';
 import CreatePost from './components/Posts/createPost';
 import ViewPost from './components/Posts/viewPost';
+import UpdatePost from './components/Posts/updatePost';
 
 const App = () => {
 
@@ -55,6 +56,7 @@ const App = () => {
           <Route path = "/communities/:link" element = {<ShowCommunity statusSI = {isSignedIn}/>} />
           <Route path = "/communities/:link/create" element = {<CreatePost statusSI = {isSignedIn}/>} />
           <Route path = "/communities/:link/:id" element = {<ViewPost statusSI = {isSignedIn}/>} />
+          <Route path = "/communities/:link/:id/update" element = {<UpdatePost statusSI = {isSignedIn}/>} />
         </Routes>
       </div>
     </div>)

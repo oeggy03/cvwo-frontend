@@ -17,7 +17,7 @@ const ViewPostContent = ({ownership, comm, creator, post, fetchDelete}) => {
         </div>
         {ownership ? 
         <div className="postViewOptionsOwner">
-            <Link class="f6 link dim ph3 pv2 mb2 dib white bg-navy ownerButton" to="#0">Edit Post</Link> 
+            <Link class="f6 link dim ph3 pv2 mb2 dib white bg-navy ownerButton" to="update">Edit Post</Link> 
             <div class="f6 link dim ph3 pv2 mb2 dib white bg-red ownerButton" onClick={fetchDelete}>Delete Post</div> 
         </div> : null}
     </div>)

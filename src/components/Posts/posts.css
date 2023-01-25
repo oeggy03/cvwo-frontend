@@ -46,7 +46,7 @@
     align-items: center;
 }
 .createIntro {
-    font-weight: bold;
+    font-weight: 500;
     font-size: 30px;
     margin-top: 20px;
     margin-bottom: 40px;
@@ -60,7 +60,7 @@
     margin-bottom: 25px;
 }
 .createTitle {
-    font-weight: normal;
+    font-weight: 500;
     font-size: 17px;
     margin-bottom: 15px;
     text-align: left;
@@ -75,8 +75,7 @@
     padding-bottom: 8px;
     background-color: #ddd;
     resize: none;
-    min-height: 300px;
-    height: fit-content;
+    min-height: 400px;
 }
 
 .createSubmitButton {
@@ -235,6 +234,8 @@
    width: 85%; 
    margin-bottom: 20px;
    margin-top: 20px;
+   border-left: 2px solid rgba(0, 0, 0, .5);
+   padding-left: 10px;
 }
 
 .commentContent {
@@ -243,6 +244,7 @@
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
+    
     
     
 }
@@ -259,4 +261,12 @@
     margin-bottom: 10px;
     font-weight: 500;
     font-size: 15px;
+}
+
+.updatePostNote {
+    margin-bottom: 60px;
+}
+
+.toBold {
+    font-weight: 500;
 }
