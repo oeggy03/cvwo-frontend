@@ -10,6 +10,7 @@ import React, { useEffect, useState } from 'react';
 import CreatePost from './components/Posts/createPost';
 import ViewPost from './components/Posts/viewPost';
 import UpdatePost from './components/Posts/updatePost';
+import CreateCommunity from './components/Communities/createCommunity';
 
 const App = () => {
 
@@ -39,10 +40,6 @@ const App = () => {
     function UpdateSignedIn (status) {
       setSignedIn(status)
     }
-
-    useEffect(() => {
-      setSignedIn(window.localStorage.getItem("isSignedIn"))
-    }, [])
     
     return (
     <div className="App">
@@ -57,6 +54,7 @@ const App = () => {
           <Route path = "/communities/:link/create" element = {<CreatePost statusSI = {isSignedIn}/>} />
           <Route path = "/communities/:link/:id" element = {<ViewPost statusSI = {isSignedIn}/>} />
           <Route path = "/communities/:link/:id/update" element = {<UpdatePost statusSI = {isSignedIn}/>} />
+          <Route path = "/communities/create" element = {<CreateCommunity statusSI = {isSignedIn}/>} />
         </Routes>
       </div>
     </div>)

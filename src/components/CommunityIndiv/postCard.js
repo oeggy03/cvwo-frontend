@@ -5,13 +5,13 @@ const PostCard = ({statusSI, post}) => {
     return (
     <div className="postCard">
         <div className="postTitle">
-            <h2>{post.title}</h2>
+            <text className="postCardTitle">{post.title}</text>
         </div>
         <div className="postDesc">
-            <h3>{post.desc}</h3>
+            <text className="postCardDesc">{post.desc}</text>
         </div>
         <div className="createdAt">
-            <h5>Post was created on {post.postdate.slice(0, 10)}</h5>
+            <h5>Post was created on {post.postdate.slice(0, 10)} at {post.postdate.slice(11, 19)}</h5>
         </div>
         <div className="postButton">
             {!statusSI ? <div className="signDiscuss">Sign in to discuss!</div> :

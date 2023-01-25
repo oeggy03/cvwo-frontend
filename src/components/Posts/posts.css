@@ -99,10 +99,10 @@
     padding:2%;
     text-align: left;
     border: 0.2px solid rgba(0, 0, 0, .5);
+    overflow: hidden;    
 }
 
 .postDescView {
-    white-space: pre-wrap;
     line-height: 150%;
     opacity: 90%;
     padding-top: 1%;

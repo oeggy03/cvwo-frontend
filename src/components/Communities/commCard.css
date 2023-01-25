@@ -15,6 +15,13 @@
     justify-content: center;
 }
 
+.titleOfCard {
+    font-weight: 500;
+    padding-left: 3px;
+    padding-right: 3px;
+    overflow: hidden;
+}
+
 .searchBarDiv {
     width: 70%;
     width: 70%;
@@ -46,8 +53,8 @@ input:focus {
 }
 
 .card-container {
-    width: 200px;
-    max-height: 210px;
+    width: 300px;
+    max-height: 285px;
     transition: max-height 0.6s ease-out;
     overflow: hidden;
     box-shadow: 0px 0px 15px -5px;
@@ -64,8 +71,8 @@ input:focus {
 
 .image-container img{
     overflow: hidden;
-    height: 150px;
-    width: 200px;
+    height: 225px;
+    width: 300px;
     object-fit: cover;
 }
 
@@ -76,4 +83,8 @@ input:focus {
 
 .createCommButton {
     margin-left: 10px;
+}
+
+.descOfCard {
+    overflow: hidden
 }

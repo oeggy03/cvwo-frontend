@@ -14,6 +14,13 @@
     flex-direction: column; 
 }
 
+.commHeader {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .commIcon {
     height: 100px;
     width: 100px;
@@ -22,18 +29,24 @@
     margin-top: 13px;
 }
 
-.commTitle {
-    font-weight: normal;
+.commsHeaderDesc {
+    font-weight: 400;
 }
 
-.commDesc h3 {
-    font-weight: normal;
+.commTitle {
+    font-weight: 600;
+    width: 90%;
+}
+
+.commDesc {
     margin-bottom: 13px;
     padding-bottom: 10px;
+    width: 90%;
+    white-space: pre-line;
 }
 
 .postCard {
-    width: 70%;
+    width: 85%;
     height: fit-content;
     max-height: 1000px;
     transition: max-height 0.3s ease-out;
@@ -72,12 +85,9 @@
     padding-left: 5%;
     padding-right: 5%;
     font-size: 15px;
-    white-space: initial;
-}
-
-.postDesc h3 {
-    font-weight: normal;
-    margin-top: 0px;
+    white-space: pre-line;
+    line-height: 150%;
+    width: 100%;
 }
 
 .createdAt {
@@ -105,4 +115,21 @@
 
 .signDiscuss {
     margin-bottom: 20px;
+}
+
+.postCardTitle {
+    font-weight: 500;
+    font-size: 22px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.postCardDesc {
+    font-weight: 400;
+    font-size: 15px;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
 }
