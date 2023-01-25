@@ -235,7 +235,7 @@
    margin-bottom: 20px;
    margin-top: 20px;
    border-left: 2px solid rgba(0, 0, 0, .5);
-   padding-left: 10px;
+   padding-left: 20px;
 }
 
 .commentContent {
@@ -269,4 +269,28 @@
 
 .toBold {
     font-weight: 500;
+}
+
+.commentOptions {
+    margin-top: 20px;
+}
+.commentOptionDelete {
+    font-weight: 400;
+    font-size: 14px;
+    color: red;
+}
+
+.commentOptionDelete:hover {
+    cursor: pointer;
+}
+
+.commentOptionEdit {
+    font-weight: 400;
+    font-size: 14px;
+    color: navy;
+    margin-right: 15px;
+}
+
+.commentOptionEdit:hover {
+    cursor: pointer;
 }
