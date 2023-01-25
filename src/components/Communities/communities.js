@@ -26,7 +26,7 @@ const Browse = ({statusSI}) => {
     return (
         <div className="allCommunityMain">
             <h1 className='commListpageTitle'>Our Communities</h1>
-            <SearchBox searchChange={(event) => onSearchChange(event)}/>
+            <SearchBox searchChange={(event) => onSearchChange(event)} statusSI={statusSI}/>
             <CardList comms={filteredComms} />
         </div>
       );

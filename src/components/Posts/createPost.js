@@ -44,6 +44,7 @@ const CreatePost = () => {
                 'Content-Type': 'application/json'
                 // 'Content-Type': 'application/x-www-form-urlencoded',
             },
+            credentials: 'include',
             body: (JSON.stringify(data)) // body data type must match "Content-Type" header
         }
 

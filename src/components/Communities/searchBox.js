@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import "./commCard.css"
 
-const SearchBox = ({ searchfield, searchChange }) => {
+const SearchBox = ({ searchfield, searchChange, statusSI }) => {
     return (
         <div className='searchBarDiv'>
             
@@ -10,6 +11,7 @@ const SearchBox = ({ searchfield, searchChange }) => {
                 className="searchBar"
                 onChange={searchChange}
             />
+            {statusSI ? <Link class="f6 link dim ph3 pv2 mb2 dib white bg-navy createCommButton" to="#0">Create a community</Link>:null}
         </div>
     );
 }
