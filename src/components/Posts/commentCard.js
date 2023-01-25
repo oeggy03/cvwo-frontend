@@ -45,7 +45,7 @@ const CommentCard = ({userid, comment}) => {
         <text className="createdByComment">Commented by: {comment.creator} on {comment.postdate.slice(0, 10)} at {comment.postdate.slice(11, 19)} </text>
         <div className="commentContent">
             {!editing ? <text className="contentOfComment">{comment.content}</text>
-                    : <textarea onChange={input => setContent(input.target.value)} defaultValue={comment.content}></textarea>}
+                    : <textarea className="editCommentField" onChange={input => setContent(input.target.value)} defaultValue={comment.content}></textarea>}
         </div>
         {userid === comment.userid ? 
         <div className="commentOptions">
