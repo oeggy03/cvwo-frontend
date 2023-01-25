@@ -49,7 +49,7 @@ const App = () => {
           <Route path = "/" element = {<Homepage updateSI = {UpdateSignedIn} statusSI = {isSignedIn}/>} />
           <Route path = "/communities" element = {<Browse statusSI={isSignedIn}/>} />
           <Route path = "/about" element = {<About statusSI = {isSignedIn}/>} />
-          <Route path = "/profile" element = {<Profile username={username} email={email} id={userid} updateSI = {UpdateSignedIn} statusSI = {isSignedIn}/>} />
+          <Route path = "/profile" element = {<Profile username={username} email={email} id={userid} statusSI = {isSignedIn}/>} />
           <Route path = "/communities/:link" element = {<ShowCommunity statusSI = {isSignedIn}/>} />
           <Route path = "/communities/:link/create" element = {<CreatePost statusSI = {isSignedIn}/>} />
           <Route path = "/communities/:link/:id" element = {<ViewPost statusSI = {isSignedIn}/>} />
