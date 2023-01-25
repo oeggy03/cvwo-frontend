@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-In the project directory, you can run:
+To set project up, please run on your local machine on port 3000:
 ### `npm install`
 
 Installs the necessary dependencies
