@@ -1,9 +1,10 @@
 # CVWO forum - FoRoom
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 This is a fully functional forum website prototype. Its features include: Secure user authentication and accounts, post communities, community creation, post creation, updating and deletion, comment creation, updating and deletion.
 
-This is meant to be run with the backend. 
+This is meant to be run with the backend. The backend can be cloned from this repo: https://github.com/oeggy03/cvwo-backend
 
 ## Available Scripts
 
